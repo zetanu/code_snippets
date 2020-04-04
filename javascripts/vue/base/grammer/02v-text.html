@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="app">
+    {{ message }}
+    <h2> {{ author.name }} {{ author.age }} 差值表达式部分替换 </h2>
+    <h2 v-text="author.name"></h2>
+    <h2 v-text="author.name + ' 表达式'"></h2> <!-- 支持表达式 -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "Hello World!",
+            author: {
+                name: "zetanu",
+                age: 29
+            },
+        }
+    })
+</script>
+</body>
+
+</html>
