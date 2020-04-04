@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app"> <!-- 同样支持挂载其他的双标签 -->
+    <img v-bind:src="imgSrc" alt="">
+    <br>
+    <img :src="imgSrc" alt="" :title="imgTitle+'!!!'" :class="isActive?'active':''">
+    <br>
+    <img :src="imgSrc" alt="" :title="imgTitle+'!!!'" :class="{active:isActive}">
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",     //挂载点  # CSS id选择器，不建议使用其他选择器
+        data: {
+            imgSrc: "https://cn.vuejs.org/images/logo.png",
+            imgTitle: "title",
+            isActive: true
+        }
+    })
+</script>
+</body>
+
+</html>
