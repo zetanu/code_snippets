@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(city, index) in citys">
+            {{index+1}}:{{city}}
+        </li>
+    </ul>
+
+    <input type="button" value="add" @click="add">
+    <input type="button" value="remove" @click="remove">
+
+    <h2 v-for="item in vegetables" :title="item.name">
+        {{item.name}}
+    </h2>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            citys: ["beijing", "shenzhen", "shanghai"],
+            vegetables: [
+                {name: "data1"},
+                {name: "data2"}
+            ]
+        },
+        methods: {
+            add: function () {
+                this.vegetables.push({name: "data add"})
+            },
+            remove: function () {
+                this.vegetables.shift()
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
