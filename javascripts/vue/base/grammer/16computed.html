@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+    {{ another }}
+    <h2>
+        {{ msg1 }}
+    </h2>
+</div>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "Hello World!",
+            another: "zetanu"
+        },
+        watch: {
+            message: function (newval, oldval) {
+                console.log(newval)
+                console.log(oldval)
+            }
+        },
+        computed: {
+            msg1: function () {
+                return "computed:" + this.message + ", " + this.another
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
